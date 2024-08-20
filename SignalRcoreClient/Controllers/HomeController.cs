@@ -59,7 +59,7 @@ namespace WebAppWithSignalRAndWCF.Controllers
             try
             {
                 _signalRConnection.InvokeAsync("SendMessage", message);
-                ViewData["ReceivedMessage"] = message;
+                ViewData["SentMessage"] = message;
                 Console.WriteLine("Message sent to SignalR hub: " + message);
             }
             catch (Exception ex)
