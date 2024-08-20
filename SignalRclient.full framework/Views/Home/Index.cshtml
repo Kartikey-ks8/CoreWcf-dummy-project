@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "SignalR Core Client";
+}
+
+<h2>@ViewData["Title"]</h2>
+<p>@ViewData["SignalRStatus"]</p>
+
+@if (ViewData["SentMessage"] != null)
+{
+    <p>Message from SignalR Hub: @ViewData["SentMessage"]</p>
+}
+
+<form asp-action="SendMessage" method="POST">
+    <input type="text" name="message" placeholder="Enter message" />
+    <button type="submit">Send Message</button>
+</form>
