@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WebAppWithSignalRAndWCF.Controllers
 {
-   
+
     public class HomeController : Controller
     {
         private readonly HubConnection _signalRConnection;
@@ -52,6 +52,7 @@ namespace WebAppWithSignalRAndWCF.Controllers
         }
 
         [HttpPost]
+        [Route("sendmessage")]
         public async Task<ActionResult> SendMessage(string message)
         {
             try
