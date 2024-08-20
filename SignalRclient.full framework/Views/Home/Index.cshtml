@@ -5,12 +5,12 @@
 <h2>@ViewData["Title"]</h2>
 <p>@ViewData["SignalRStatus"]</p>
 
-@if (ViewData["SentMessage"] != null)
+@if (ViewData["ReceivedMessage"] != null)
 {
-    <p>Message from SignalR Hub: @ViewData["SentMessage"]</p>
+    <p>Message from SignalR Hub: @ViewData["ReceivedMessage"]</p>
 }
 
-<form asp-action="SendMessage" method="POST">
+<form action="http://localhost:5114/sendmessage" method="POST">
     <input type="text" name="message" placeholder="Enter message" />
     <button type="submit">Send Message</button>
 </form>
